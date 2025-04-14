@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>¿Dónde está la biblioteca?</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <main id="main_container"></main>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main id="main_container">
+        <section id="btn_container">
+            <button id="add_btn">ADD BOOK!</button>
+        </section>
+        <section id="card_main_container">
+            <form action="" id="book_form">
+                <label for="title">Title:
+                    <input type="text" id="title"></label>
+                <label for="author">Author: <input type="text" id="author"></label>
+                <label for="pages">Number of pages: <input type="number" id="pages"></label>
+                <label for="isRead">Have you read it? 
+                    <input type="radio" id="isRead_yes" name="isRead"> Yes
+                    <input type="radio" id="isRead_no" name="isRead"> No
+                </label>
+                <div id="form_btn_container">
+                    <button type="button" id="form_btn">ADD!</button>
+                </div>
+            </form>            
+        </section>
+        
+        </section>
+    </main>
     <script src="scritps.js"></script>
-</body>
+  </body>
 </html>

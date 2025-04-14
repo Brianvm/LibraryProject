@@ -1,4 +1,9 @@
 const myLibrary = [];
+const cardMainContainer = document.querySelector("#card_main_container");
+const bookForm = document.querySelector("form");
+document.querySelector('#add_btn').addEventListener("click", () => {
+    bookForm.style.visibility = "visible";
+});
 
 // BOOK CONSTRUCTOR
 function Book(title, author, pages, read) {
