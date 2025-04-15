@@ -4,35 +4,34 @@ const bookForm = document.querySelector("form");
 const bookTitle = document.querySelector('#title');
 const bookAuthor = document.querySelector('#author');
 const bookPages = document.querySelector('#pages');
-const readValue = document.querySelector('input[name="isRead"]:checked');
 
 // ADD BOOK BUTTON
 document.querySelector('#add_btn').addEventListener("click", () => {
-    console.log('Button clicked!')
-    bookForm.style.visibility = "visible";
-    bookTitle.value = '';
-    bookAuthor.value = ''; 
-    bookPages.value = ''; 
-    readValue.value = '';
+    bookForm.style.zIndex = 0;
 });
 
 // FORM BUTTON
 document.querySelector('#form_btn').addEventListener('click', () => {
-    addNewBook(bookTitle.value, bookAuthor.value, bookPages.value, readValue.value);
+    const readValueElement = document.querySelector('input[name="isRead"]:checked');
+    const readValueString = readValueElement ? readValueElement.value : "false"; // Default to "false" if none checked
+    const readBoolean = readValueString === "true"; // Convert string to boolean
+    addNewBook(bookTitle.value, bookAuthor.value, bookPages.value, readBoolean);
     bookTitle.value = '';
-    bookAuthor.value = ''; 
+    bookAuthor.value = '';
     bookPages.value = ''; 
-    readValue.value = '';
-    bookForm.style.visibility = "hidden";
+    bookForm.style.zIndex = -1;
+
+    cardMainContainer.innerHTML = "";
 
     myLibrary.forEach(book => {
-        cardMainContainer.innerHTML += `
-        <article>
-            <h1>Title: ${book.title}</h1>
-            <p>Author: ${book.author}</p>
-            <p>Pages: ${book.pages}</p>
-            <p>Have you read it? ${book.read}</p>
-        </article>`
+        const article = document.createElement('article');
+        article.innerHTML = `
+        <h1>Title: ${book.title}</h1>
+        <p>Author: ${book.author}</p>
+        <p>Pages: ${book.pages}</p>
+        <p>Have you read it? ${book.read === true ? "Yes" : "No"}</p>
+        `;
+        cardMainContainer.appendChild(article);
     });
 });
 

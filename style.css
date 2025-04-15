@@ -80,7 +80,8 @@ form {
     background-color: #e1eebc;
     border: 2px solid #754e1a;
     border-radius: 10px;
-    visibility: hidden;
+    /* visibility: hidden; */
+    z-index: -1;
 }
 
 #form_btn_container {
