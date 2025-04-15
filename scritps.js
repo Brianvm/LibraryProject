@@ -27,6 +27,9 @@ document.querySelector('#form_btn').addEventListener('click', () => {
     renderNewBook(newBook);
 });
 
+// DELETE BTN
+document.querySelector("")
+
 
 // BOOK CONSTRUCTOR
 function Book(title, author, pages, read) {
@@ -52,10 +55,11 @@ function addNewBook(book) {
 function renderNewBook(book) {
         const article = document.createElement('article');
         article.innerHTML = `
-        <p><span>Title:</span> ${book.title}</p>
-        <p><span>Author:</span> ${book.author}</p>
-        <p><span>Pages:</span> ${book.pages}</p>
-        <p><span>Have you read it?</span> ${book.read === true ? "Yes" : "No"}</p>
+        <p><span class="bold">Title:</span> ${book.title}</p>
+        <p><span class="bold">Author:</span> ${book.author}</p>
+        <p><span class="bold">Pages:</span> ${book.pages}</p>
+        <p><span class="bold">Have you read it?</span> ${book.read === true ? "Yes" : "No"}</p>
+        <button class="del_btn">Delete</button>
         `;
         cardMainContainer.appendChild(article);
 }

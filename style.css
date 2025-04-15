@@ -1,11 +1,52 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+form {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+    font-family: inherit;
+    font-weight: bold;
+    color: #754e1a;
+    background-color: #e1eebc;
+    border: 2px solid #754e1a;
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+article {
+    height: fit-content;
+    padding: 10px 15px;
+    background-color: #e1eebc;
+    color: #754e1a;
+    border-left: 5px solid #754e1a;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px;
+}
+
+.bold {
+  font-family: "Gentium Book Plus", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1rem;
+}
+
+.del_btn {
+    position: relative;
+    left: 70%;
+    font-size: 0.7rem;
+    margin-top: 10px;
+    background-color: #A62C2C;
 }
 
 #main_container {
-  width: 100vw;
-  height: 100vh;
+    width: 100vw;
+    height: 100vh;
   background-color: #c8ae7d;
   font-family: "Gentium Book Plus", serif;
 }
@@ -32,9 +73,7 @@
 }
 
 #add_btn {
-    
     padding: 10px 15px;
-    
     font-size: 1.5rem;
     font-weight: bolder;
     color:#754e1a;
@@ -43,44 +82,11 @@
     box-shadow: 0 0 15px;
 }
 
-#add_btn, #form_btn {
+#add_btn, #form_btn, .del_btn {
     height: fit-content;
     font-family: inherit;
     border-radius: 10px;
-}
-
-article {
-  height: fit-content;
-  padding: 10px 15px;
-  background-color: #e1eebc;
-  color: #754e1a;
-  border-left: 5px solid #754e1a;
-  border-radius: 5px;
-  text-align: center;
-  box-shadow: 0 5px 10px;
-}
-
-span {
-  font-family: "Gentium Book Plus", serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 1rem;
-}
-
-form {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 15px;
-    padding: 10px;
-    font-family: inherit;
-    font-weight: bold;
-    color: #754e1a;
-    background-color: #e1eebc;
-    border: 2px solid #754e1a;
-    border-radius: 10px;
-    visibility: hidden;
+    width: fit-content;
 }
 
 #form_btn_container {
@@ -89,12 +95,18 @@ form {
 }
 
 #form_btn {
-    width: fit-content;
-    padding: 5px 10px;
     font-size: 1.25rem;
     font-weight: bold;
-    color: #e1eebc;
     background-color: #754e1a;
+}
+
+#form_btn, .del_btn {
+    padding: 5px 10px;
+    color: #e1eebc;
     border: none;
 }
 
+#radio_container {
+    display: flex;
+    column-gap: 20px;
+}
