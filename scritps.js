@@ -28,7 +28,9 @@ document.querySelector('#form_btn').addEventListener('click', () => {
 });
 
 // DELETE BTN
-document.querySelector("")
+document.querySelector(".del_btn").addEventListener('click', () => {
+    cardMainContainer.removeChild()
+});
 
 
 // BOOK CONSTRUCTOR
@@ -41,6 +43,7 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
+    this.id = crypto.randomUUID();
     this.info = function() {
         const isRead = this.read ? "already read." : "not read yet."
         return `${this.title} by ${this.author}, ${this.pages} pages, ${isRead}`
@@ -48,12 +51,12 @@ function Book(title, author, pages, read) {
 }
 
 function addNewBook(book) {
-    book.id = crypto.randomUUID();
     return myLibrary.push(book);
 }
 
 function renderNewBook(book) {
         const article = document.createElement('article');
+        article.setAttribute('data-id', book.id);
         article.innerHTML = `
         <p><span class="bold">Title:</span> ${book.title}</p>
         <p><span class="bold">Author:</span> ${book.author}</p>
