@@ -60,7 +60,7 @@ article {
   box-shadow: 0 5px 10px;
 }
 
-h1 {
+span {
   font-family: "Gentium Book Plus", serif;
   font-weight: 700;
   font-style: normal;
@@ -80,8 +80,7 @@ form {
     background-color: #e1eebc;
     border: 2px solid #754e1a;
     border-radius: 10px;
-    /* visibility: hidden; */
-    z-index: -1;
+    visibility: hidden;
 }
 
 #form_btn_container {

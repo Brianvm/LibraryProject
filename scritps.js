@@ -7,7 +7,8 @@ const bookPages = document.querySelector('#pages');
 
 // ADD BOOK BUTTON
 document.querySelector('#add_btn').addEventListener("click", () => {
-    bookForm.style.zIndex = 0;
+    bookForm.style.visibility = "visible";
+    cardMainContainer.style.visibility = "hidden";
 });
 
 // FORM BUTTON
@@ -20,7 +21,8 @@ document.querySelector('#form_btn').addEventListener('click', () => {
     bookTitle.value = '';
     bookAuthor.value = '';
     bookPages.value = ''; 
-    bookForm.style.zIndex = -1;
+    bookForm.style.visibility = "hidden";
+    cardMainContainer.style.visibility = "visible";
 
     renderNewBook(newBook);
 });
@@ -50,10 +52,10 @@ function addNewBook(book) {
 function renderNewBook(book) {
         const article = document.createElement('article');
         article.innerHTML = `
-        <h1>Title: ${book.title}</h1>
-        <p>Author: ${book.author}</p>
-        <p>Pages: ${book.pages}</p>
-        <p>Have you read it? ${book.read === true ? "Yes" : "No"}</p>
+        <p><span>Title:</span> ${book.title}</p>
+        <p><span>Author:</span> ${book.author}</p>
+        <p><span>Pages:</span> ${book.pages}</p>
+        <p><span>Have you read it?</span> ${book.read === true ? "Yes" : "No"}</p>
         `;
         cardMainContainer.appendChild(article);
 }
