@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 const cardMainContainer = document.querySelector("#card_main_container");
 const bookForm = document.querySelector("form");
 const bookTitle = document.querySelector('#title');
@@ -10,7 +10,7 @@ document.querySelector('#add_btn').addEventListener("click", () => {
     bookForm.style.visibility = "visible";
     cardMainContainer.style.visibility = "hidden";
 });
-
+1
 // FORM BUTTON
 document.querySelector('#form_btn').addEventListener('click', () => {
     const readValueElement = document.querySelector('input[name="isRead"]:checked');
@@ -28,8 +28,17 @@ document.querySelector('#form_btn').addEventListener('click', () => {
 });
 
 // DELETE BTN
-document.querySelector(".del_btn").addEventListener('click', () => {
-    cardMainContainer.removeChild()
+cardMainContainer.addEventListener('click', function(e) {
+    if (e.target.classList.contains('del_btn')) {
+        const articleToRemove = e.target.closest('article');
+        if (articleToRemove) {
+            const booIdToDelete = articleToRemove.dataset.id;
+            myLibrary = myLibrary.filter(book => book.id !== booIdToDelete);
+            cardMainContainer.removeChild(articleToRemove);
+        }
+    }
+
+
 });
 
 
@@ -63,6 +72,7 @@ function renderNewBook(book) {
         <p><span class="bold">Pages:</span> ${book.pages}</p>
         <p><span class="bold">Have you read it?</span> ${book.read === true ? "Yes" : "No"}</p>
         <button class="del_btn">Delete</button>
+        <button class="isread_toggle">Read Toggle</button>
         `;
         cardMainContainer.appendChild(article);
 }

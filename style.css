@@ -84,9 +84,9 @@ article {
 
 #add_btn, #form_btn, .del_btn {
     height: fit-content;
+    width: fit-content;
     font-family: inherit;
     border-radius: 10px;
-    width: fit-content;
 }
 
 #form_btn_container {
