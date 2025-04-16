@@ -1,32 +1,32 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 form {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 15px;
-    padding: 10px;
-    font-family: inherit;
-    font-weight: bold;
-    color: #754e1a;
-    background-color: #e1eebc;
-    border: 2px solid #754e1a;
-    border-radius: 10px;
-    visibility: hidden;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+  font-family: inherit;
+  font-weight: bold;
+  color: #754e1a;
+  background-color: #e1eebc;
+  border: 2px solid #754e1a;
+  border-radius: 10px;
+  visibility: hidden;
 }
 
 article {
-    height: fit-content;
-    padding: 10px 15px;
-    background-color: #e1eebc;
-    color: #754e1a;
-    border-left: 5px solid #754e1a;
-    border-radius: 5px;
-    box-shadow: 0 5px 10px;
+  height: fit-content;
+  padding: 10px 15px;
+  background-color: #e1eebc;
+  color: #754e1a;
+  border-left: 5px solid #754e1a;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px;
 }
 
 .bold {
@@ -37,76 +37,90 @@ article {
 }
 
 .del_btn {
-    position: relative;
-    left: 70%;
-    font-size: 0.7rem;
-    margin-top: 10px;
-    background-color: #A62C2C;
+  background-color: #a62c2c;
+}
+
+.isread_toggle {
+  background-color: #1E5128;
+}
+
+.del_btn,
+.isread_toggle {
+  font-size: 0.7rem;
+  margin-top: 10px;
+}
+
+#card_btns_container {
+    display: flex;
+    justify-content: space-between;
 }
 
 #main_container {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
   background-color: #c8ae7d;
   font-family: "Gentium Book Plus", serif;
 }
 
 #card_main_container {
-    position: relative;
-    height: 75vh;
-    padding: 5%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    font-weight: 400;
-    font-style: normal;
-
+  position: relative;
+  height: 75vh;
+  padding: 5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 400;
+  font-style: normal;
 }
 
 #btn_container {
-    height: 25vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #add_btn {
-    padding: 10px 15px;
-    font-size: 1.5rem;
-    font-weight: bolder;
-    color:#754e1a;
-    background-color: #e1eebc;
-    border: 2px solid #754e1a;
-    box-shadow: 0 0 15px;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: #754e1a;
+  background-color: #e1eebc;
+  border: 2px solid #754e1a;
+  box-shadow: 0 0 15px;
 }
 
-#add_btn, #form_btn, .del_btn {
-    height: fit-content;
-    width: fit-content;
-    font-family: inherit;
-    border-radius: 10px;
+#add_btn,
+#form_btn,
+.del_btn,
+.isread_toggle {
+  height: fit-content;
+  width: fit-content;
+  font-family: inherit;
+  border-radius: 10px;
 }
 
 #form_btn_container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #form_btn {
-    font-size: 1.25rem;
-    font-weight: bold;
-    background-color: #754e1a;
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: #754e1a;
 }
 
-#form_btn, .del_btn {
-    padding: 5px 10px;
-    color: #e1eebc;
-    border: none;
+#form_btn,
+.del_btn, .isread_toggle {
+  padding: 5px 10px;
+  color: #e1eebc;
+  border: none;
 }
 
 #radio_container {
-    display: flex;
-    column-gap: 20px;
+  display: flex;
+  column-gap: 20px;
 }
