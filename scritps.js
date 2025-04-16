@@ -1,3 +1,4 @@
+// LIBRARY ARRAY AND DOM ELEMENTS
 let myLibrary = [];
 const cardMainContainer = document.querySelector("#card_main_container");
 const bookForm = document.querySelector("form");
@@ -10,7 +11,7 @@ document.querySelector('#add_btn').addEventListener("click", () => {
     bookForm.style.visibility = "visible";
     cardMainContainer.style.visibility = "hidden";
 });
-1
+
 // FORM BUTTON
 document.querySelector('#form_btn').addEventListener('click', () => {
     const readValueElement = document.querySelector('input[name="isRead"]:checked');
@@ -63,10 +64,6 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
     this.id = crypto.randomUUID();
-    this.info = function() {
-        const isRead = this.read ? "already read." : "not read yet."
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${isRead}`
-    };
 }
 
 function addNewBook(book) {
